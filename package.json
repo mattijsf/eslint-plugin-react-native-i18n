@@ -1,0 +1,23 @@
+{
+  "name": "eslint-plugin-react-native-i18n",
+  "version": "0.0.4",
+  "description": "ESLint plugin for React Native + i18n",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "mattijsf",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha --recursive test/**/*.test.js"
+  },
+  "devDependencies": {
+    "eslint": "~3.9.1",
+    "mocha": "^3.1.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "ISC"
+}
