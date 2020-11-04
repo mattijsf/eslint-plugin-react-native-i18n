@@ -1,5 +1,6 @@
 module.exports = {
   "basic": "Hello world!",
+  "iAmEmpty": "",
   "some": {
     "nested": {
       "item": "Item"

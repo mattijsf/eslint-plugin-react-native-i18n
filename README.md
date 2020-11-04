@@ -47,6 +47,7 @@ Then add the required settings under the sessions section.
 {
     "settings": {
         "i18n": {
+            "allowEmpty": true,
             "languages": {
                 "en": "i18n/en.js",
                 "nl": "i18n/nl.json",

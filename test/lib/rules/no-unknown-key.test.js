@@ -11,6 +11,7 @@ const ruleTester = new RuleTester();
 const settings = {
     i18n: {
         disableCache: true,
+        allowEmpty: true,
         languages: {
             enJS: 'test/i18n/en.js',
             enJSON: 'test/i18n/en.json',
@@ -23,10 +24,45 @@ const settings = {
 ruleTester.run("no-unknown-key", rule, {
     valid: [
         { code: 'I18n.t("basic")', settings },
+        { code: 'I18n.t("iAmEmpty")', settings },
         { code: 'I18n.t("some.nested.item", {count: 1})', settings },
         { code: 'I18n.t("plural")', settings },
     ],
     invalid: [
+        {
+            code: 'I18n.t("noES")',
+            settings: {
+                i18n: {
+                    disableCache: true,
+                    languages: {
+                        es: 'tests/i18n/es.json'
+                    },
+                },
+            },
+            errors: [
+                {
+                    message: "'es' language is missing",
+                    type: 'CallExpression',
+                },
+            ],
+        },
+        {
+            code: 'I18n.t("noES")',
+            settings: {
+                i18n: {
+                    disableCache: true,
+                    languages: {
+                        es: 'tests/i18n/es.json'
+                    },
+                },
+            },
+            errors: [
+                {
+                    message: "'es' language is missing",
+                    type: 'CallExpression',
+                },
+            ],
+        },
         {
             code: 'I18n.t("noES")',
             settings: {
@@ -76,6 +112,24 @@ ruleTester.run("no-unknown-key", rule, {
                 },
                 {
                     message: "'iAmMissingInNL' is missing from 'nlJSON' language",
+                    type: 'CallExpression',
+                },
+            ],
+        },
+        {
+            code: 'I18n.t("iAmEmpty")',
+            settings: {
+                i18n: {
+                    disableCache: true,
+                    allowEmpty: false,
+                    languages: {
+                        enJS: 'test/i18n/en.js',
+                    }
+                },
+            },
+            errors: [
+                {
+                    message: "'iAmEmpty' is missing from 'enJS' language",
                     type: 'CallExpression',
                 },
             ],
