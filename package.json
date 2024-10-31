@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-react-native-i18n",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "ESLint plugin for React Native + i18n",
   "keywords": [
     "eslint",
