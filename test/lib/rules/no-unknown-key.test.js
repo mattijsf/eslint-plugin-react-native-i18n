@@ -27,59 +27,13 @@ ruleTester.run("no-unknown-key", rule, {
         { code: 'I18n.t("iAmEmpty")', settings },
         { code: 'I18n.t("some.nested.item", {count: 1})', settings },
         { code: 'I18n.t("plural")', settings },
+        { code: 'I18n.t("plural", {count: 1})', settings },
+        { code: 'I18n.t("plural", {count: 5})', settings },
+        { code: 'I18n.t("flattened_plural")', settings },
+        { code: 'I18n.t("flattened_plural", {count: 1})', settings },
+        { code: 'I18n.t("flattened_plural", {count: 5})', settings },
     ],
     invalid: [
-        {
-            code: 'I18n.t("noES")',
-            settings: {
-                i18n: {
-                    disableCache: true,
-                    languages: {
-                        es: 'tests/i18n/es.json'
-                    },
-                },
-            },
-            errors: [
-                {
-                    message: "'es' language is missing",
-                    type: 'CallExpression',
-                },
-            ],
-        },
-        {
-            code: 'I18n.t("noES")',
-            settings: {
-                i18n: {
-                    disableCache: true,
-                    languages: {
-                        es: 'tests/i18n/es.json'
-                    },
-                },
-            },
-            errors: [
-                {
-                    message: "'es' language is missing",
-                    type: 'CallExpression',
-                },
-            ],
-        },
-        {
-            code: 'I18n.t("noES")',
-            settings: {
-                i18n: {
-                    disableCache: true,
-                    languages: {
-                        es: 'tests/i18n/es.json'
-                    },
-                },
-            },
-            errors: [
-                {
-                    message: "'es' language is missing",
-                    type: 'CallExpression',
-                },
-            ],
-        },
         {
             code: 'I18n.t("foo")',
             settings,

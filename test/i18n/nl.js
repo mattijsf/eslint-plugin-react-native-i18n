@@ -9,5 +9,7 @@ module.exports = {
   "plural": {
     "one": "One",
     "other": "Other"
-  }
+  },
+  "flattened_plural_one": "One",
+  "flattened_plural_other": "Other"
 }
